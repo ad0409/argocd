@@ -1,0 +1,22 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: nginx-test-ingress
+  namespace: nginx-test
+spec:
+  ingressClassName: nginx
+  rules:
+  - host: "nginx-test.brilliantbase.org"
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: nginx-test-svc 
+            port:
+              number: 80
+  tls:
+  - hosts:
+    - nginx-test.brilliantbase.org
+    secretName: nginx-test-tls-secret
