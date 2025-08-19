@@ -48,6 +48,7 @@ metadata:
   name: nginx-test-ingress
   namespace: nginx-test
 spec:
+  ingressClassName: nginx
   rules:
   - host: "nginx-test.brilliantbase.org"
     http:
