@@ -19,18 +19,20 @@ This document provides the primary instructions for GitHub Copilot when working 
 - Prefer clarity over cleverness
 - Include appropriate comments and documentation
 - Follow language-specific style guides
+- Use always the English language for code
+- If the chat language is German, use a direct, professional, friendly tone and wording 
 
 ## Security
 - Never commit sensitive information
-- Use environment variables for secrets
-- Follow principle of least privilege
 - Never expose secrets, credentials, or tokens in code/configs
+- Use environment variables for secrets
+- Never hardcode secrets; use environment variables or secret managers
+- Follow principle of least privilege
 - Apply least privilege in IAM/RBAC and CI/CD
 - Sanitize inputs and validate user data
 
 ## Infrastructure & DevOps
 - Infrastructure-as-Code must be idempotent and reproducible
-- Never hardcode secrets; use environment variables or secret managers
 - Docker:
   - Use slim, version-pinned base images
   - Prefer multi-stage builds
@@ -51,11 +53,6 @@ This document provides the primary instructions for GitHub Copilot when working 
 - Handle exceptions explicitly (no blanket `except Exception`).
 - Dependencies managed with Poetry or pip-tools.
 
-## Security
-- Never expose secrets, credentials, or tokens in code/configs.
-- Apply least privilege in IAM/RBAC and CI/CD.
-- Sanitize inputs and validate user data.
-
 ## Documentation & Output
 - Every script/module must include short usage docs or examples
 - Provide file structure when multiple files are involved
@@ -69,12 +66,11 @@ This document provides the primary instructions for GitHub Copilot when working 
 - Ensure existing tests pass
 - Document test coverage requirements
 - Testing with pytest for Python, prefer fixtures
-- Handle exceptions explicitly (no blanket `except Exception`)
-
-## Version Control
-- Write clear commit messages
-- Follow conventional commits format
-- Keep changes atomic and focused
+## Testing
+- Include tests for new functionality
+- Ensure existing tests pass
+- Document test coverage requirements
+- Testing with pytest for Python, prefer fixtures
 
 ## Reference Documentation
 
