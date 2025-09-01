@@ -9,4 +9,4 @@ spec:
     name: ssl-issuer
     kind: ClusterIssuer
   dnsNames:
-    - nginx-test.brilliantbase.org
+  - ${DOMAIN}
